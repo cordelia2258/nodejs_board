@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../include/head %>
+  </head>
+  <body>
+    <header>
+      <h1 class="text_center">My Board List</h1>
+    </header>
+    <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg">
+          <div class="wrapper wrapper-content animated fadeInRight">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="input-group pull-right">
+                        <button type="button" class="btn btn-w-m btn-primary" onclick="location.href='/'">Home</button>
+                        <button type="button" class="btn btn-w-m btn-primary" onclick="location.href='/board/boardNew'">New</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-12">
+                    <div class="wrapper wrapper-content animated fadeInRight">
+                            <div class="col-lg-12">
+                            <div class="ibox float-e-margins">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+
+                                        <thead>
+                                          <tr>
+                                            <th>No</th>
+                                            <th>Title</th>
+                                            <th>Date</th>
+                                            <th>Writer</th>
+                                            <th>Hit</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <% if(board === null || board.length === 0){ %>
+                                              <tr class="noData">
+                                                <td colspan="5">There is no data to show :(</td>
+                                              </tr>
+                                          <% } %>
+                                          <% board.forEach(function(board){ %>
+                                            <tr onclick="window.location = '/board/boardView/<%= board._id %>'">
+                                              <td class="text_center width_100"><%= board.idx %></td>
+                                              <td class="text_left"><%= board.title %></td>
+                                              <td class="text_center width_150"><%= board.getCreatedDate() %></td>
+                                              <td class="text_center width_150"><%= board.writer %></td>
+                                              <td class="text_center width_150"><%= board.hit %></td>
+                                            </tr>
+                                          <% }) %>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+              <!--<div class="row">
+                <div class="col-lg-10">
+                  <div class="input-group pull-right">
+                    <button type="submit" class="btn btn-w-m btn-default">Submit</button>
+                  </div>
+                </div>
+              </div>-->
+          </div>
+        </div>
+    </div>
+</body>
+</html>

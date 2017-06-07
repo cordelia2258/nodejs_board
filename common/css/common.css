@@ -1,0 +1,39 @@
+table thead th{
+  text-align:center;
+}
+
+.text_left{
+  text-align:left;
+}
+
+.text_center{
+  text-align:center;
+}
+
+.text_right{
+  text-align:right;
+}
+
+.pad_top_5{
+  padding-top: 5px;
+}
+
+.pad_top_10{
+  padding-top: 10px;
+}
+
+.width_100{
+  width: 100px;
+}
+
+.width_150{
+  width: 150px;
+}
+
+.width_200{
+  width: 200px;
+}
+
+.width_250{
+  width: 250px;
+}
