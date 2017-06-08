@@ -3,8 +3,8 @@ var path     = require('path');
 var mongoose = require('mongoose');
 var session  = require('express-session');
 var flash    = require('connect-flash');
-var bodyParser  = require('body-parser');
-var boardController = require('./controllers/boardController');
+//var bodyParser  = require('body-parser');
+//var boardController = require('./controllers/boardController');
 var app = express();
 
 // database Connection
@@ -21,8 +21,8 @@ db.on("error",function (err) {
 app.set('view engine', 'ejs');
 //common을 공통폴더로 지정하였기에 경로를 찾을땐 url창에서 common을 제외해야함.
 app.use(express.static(path.join(__dirname, 'common')));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({extended:true}));
 app.use(flash());
 app.use(session({secret:'MySecret'}));
 app.use('/', require('./routes/index'));      //초기화면
